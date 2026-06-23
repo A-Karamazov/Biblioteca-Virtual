@@ -32,7 +32,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 60px 0 15px;
+    padding: 0 60px 0 30px;
     font-size: 25px;
 }
 
@@ -67,8 +67,31 @@ main {
 }
 
 main .first-line {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+main .books {
+    margin: 40px 50px 0 20px;
+    font-size: 35px;
+}
+
+main .search {
+    padding: 1.1rem;
+    margin: 40px 2px;
+    border-radius: 7%; 
+    width: 350px;
+}
+
+main .search_btn {
+    padding: 1.1rem;
+    margin: 30px 2px;
+    border-radius: 7%; 
+}
+
+main .add_btn {
+    margin: 30px 20px 0 580px;
+    padding: 1.1rem;
+    border-radius: 7%;
 }
