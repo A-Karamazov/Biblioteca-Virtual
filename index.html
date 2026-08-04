@@ -6,7 +6,7 @@
     <title>Virtual Library</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='main.js'></script>
+    <script src='main.js' defer></script>
 </head>
 <body>
     <header>
@@ -21,10 +21,14 @@
         <a href="">Configurações</a>
     </aside>
     <main>
-        <h2 class="first-line books">Meus Livros</h2>
-        <input class="first-line search" type="text" placeholder="Pesquisar livro, autor, tema...">
-        <button class="first-line search_btn">Pesquisar</button>
-        <button class="first-line add_btn">Adicionar Livro</button>
+        <h2 class="books">Meus Livros</h2>
+        <div class="controls">
+            <div class="search-group">
+                <input class="search" type="text" placeholder="Pesquisar livro, autor, tema...">
+                <button class="search_btn">Pesquisar</button>
+            </div>
+            <a class="add_btn" href="newbook.html">Adicionar Livro</a>
+        </div>
     </main>
 </body>
 </html>
