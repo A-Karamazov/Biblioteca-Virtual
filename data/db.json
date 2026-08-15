@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "nome": "Karamazov",
+    "autor": "Dostoevsky",
+    "tema": "Crime Investigativo",
+    "status": "lido",
+    "editora": "qualquer uma",
+    "categoria": "romance",
+    "observacoes": "Meu favorito :)"
+  },
+  {
+    "id": 2,
+    "nome": "Policarpo Quaresma",
+    "autor": "Lima Barreto",
+    "tema": "Intelectualismo brasileiro",
+    "status": "lendo",
+    "editora": "Abril",
+    "categoria": "romance"
+  }
+]

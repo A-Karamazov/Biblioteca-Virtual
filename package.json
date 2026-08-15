@@ -1,0 +1,18 @@
+{
+  "name": "biblioteca-digital-backend",
+  "version": "1.0.0",
+  "description": "Backend da Biblioteca Digital - projeto acadêmico",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "bun --watch src/server.ts",
+    "start": "bun src/server.ts"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  }
+}
