@@ -2,9 +2,6 @@ import fs from "fs";
 import path from "path";
 import { LivroJSON } from "./models/Livro";
 
-// process.cwd() = pasta de onde o comando "npm start" é executado (backend/)
-// Isso evita depender de __dirname, que muda dependendo se o código está
-// rodando direto do src/ (com ts-node-dev) ou já compilado em dist/.
 const CAMINHO_DB = path.join(process.cwd(), "data", "db.json");
 
 export function carregarDados(): LivroJSON[] {
