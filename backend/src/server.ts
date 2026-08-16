@@ -7,14 +7,10 @@ import { carregarDados, salvarDados } from "./database";
 const app = express();
 const PORTA = 3000;
 
-// Permite que o Express entenda corpo de requisição em JSON (necessário pro POST/PUT funcionarem)
 app.use(express.json());
-
-// Serve os arquivos do frontend (HTML, CSS, JS) diretamente
 app.use(express.static(path.join(__dirname, "..", "..", "frontend")));
 
-// Uma única instância de Biblioteca compartilhada por todas as requisições,
-// carregada do db.json assim que o servidor sobe.
+// instância única de Biblioteca compartilhada
 const biblioteca = new Biblioteca();
 biblioteca.carregarDeJson(carregarDados());
 
@@ -35,7 +31,7 @@ app.get("/api/livros", (req, res) => {
     res.json(resultado.map(livro => livro.converterParaJson()));
 });
 
-// GET /api/livros/:id -> retorna um livro específico (usado na tela de edição)
+// GET /api/livros/:id -> retorna um livro específico 
 app.get("/api/livros/:id", (req, res) => {
     const id = Number(req.params.id);
     const livro = biblioteca.buscarLivro(id);
@@ -48,7 +44,7 @@ app.get("/api/livros/:id", (req, res) => {
     res.json(livro.converterParaJson());
 });
 
-// POST /api/livros -> cria um novo livro
+// POST /api/livros 
 app.post("/api/livros", (req, res) => {
     const { nome, autor, tema, status, editora, categoria, link, observacoes } = req.body;
 
@@ -69,7 +65,7 @@ app.post("/api/livros", (req, res) => {
     res.status(201).json(novoLivro.converterParaJson());
 });
 
-// PUT /api/livros/:id -> edita um livro existente
+// PUT /api/livros/:id 
 app.put("/api/livros/:id", (req, res) => {
     const id = Number(req.params.id);
     const livroAtualizado = biblioteca.atualizarLivro(id, req.body);
@@ -83,7 +79,7 @@ app.put("/api/livros/:id", (req, res) => {
     res.json(livroAtualizado.converterParaJson());
 });
 
-// DELETE /api/livros/:id -> exclui um livro
+// DELETE /api/livros/:id 
 app.delete("/api/livros/:id", (req, res) => {
     const id = Number(req.params.id);
     const removido = biblioteca.removerLivro(id);
