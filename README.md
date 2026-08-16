@@ -15,3 +15,5 @@ Dependências e rodar o programa (Usando Bun):
    OU
 
    https://biblioteca-virtual-y7c5.onrender.com/index.html
+
+[Apresentação](https://canva.link/w71p0xblum0bket)
