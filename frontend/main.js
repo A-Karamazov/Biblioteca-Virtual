@@ -1,4 +1,4 @@
-// Rótulos legíveis pra cada valor de status guardado no banco
+// Rótulos pra cada valor possivel de status 
 const ROTULOS_STATUS = {
     "nao-lido": "Não Lido",
     "lendo": "Lendo",
@@ -6,7 +6,7 @@ const ROTULOS_STATUS = {
 };
 
 
-// ===== Página index.html — listagem e busca =====
+// index.html — listagem e busca 
 function inicializarListagem() {
     const corpoTabela = document.getElementById("corpo-tabela");
     const tabela = document.getElementById("tabela-livros");
@@ -41,7 +41,6 @@ function inicializarListagem() {
 
         for (const livro of livros) {
             const linha = document.createElement("tr");
-
             linha.innerHTML = `
                 <td>${escaparHtml(livro.nome)}</td>
                 <td>${escaparHtml(livro.autor)}</td>
@@ -56,7 +55,7 @@ function inicializarListagem() {
             corpoTabela.appendChild(linha);
         }
 
-        // Liga o clique de cada botão "Excluir" recém-criado
+        // Ativa o botão "Excluir" 
         corpoTabela.querySelectorAll(".link-excluir").forEach(link => {
             link.addEventListener("click", async () => {
                 const id = Number(link.dataset.id);
@@ -69,7 +68,7 @@ function inicializarListagem() {
         });
     }
 
-    // Evita que texto do usuário (título/autor) seja interpretado como HTML
+    // Evita que o input do usuário (título e autor) seja interpretado como HTML
     function escaparHtml(texto) {
         const div = document.createElement("div");
         div.textContent = texto;
@@ -84,7 +83,7 @@ function inicializarListagem() {
     carregarLivros();
 }
 
-// ===== Página newbook.html — criar ou editar livro =====
+// newbook.html — criar ou editar livro
 function inicializarFormulario() {
     const formulario = document.getElementById("new-book-form");
     if (!formulario) return;
@@ -100,7 +99,7 @@ function inicializarFormulario() {
     const tituloFormulario = document.getElementById("titulo-formulario");
     const botaoSalvar = document.getElementById("botao-salvar");
 
-    // Se veio um ?id=... na URL, estamos editando um livro existente
+    // Verifica se o id do livro existe para editar ele
     const parametros = new URLSearchParams(window.location.search);
     const idEdicao = parametros.get("id");
 
@@ -158,7 +157,8 @@ function inicializarFormulario() {
     });
 }
 
-// ===== Ponto de entrada =====
+
+
 document.addEventListener("DOMContentLoaded", () => {
     inicializarListagem();
     inicializarFormulario();
