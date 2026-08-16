@@ -26,9 +26,6 @@ export class Livro {
         public observacoes?: string
     ) {}
 
-    // readonly acima já impede reatribuir o id depois de criado -
-    // não precisa de getter/propriedade privada separada pra isso.
-
     atualizarDados(dados: Partial<LivroJSON>): void {
         if (dados.nome !== undefined) this.nome = dados.nome;
         if (dados.autor !== undefined) this.autor = dados.autor;
