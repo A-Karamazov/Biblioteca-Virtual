@@ -41,7 +41,7 @@ export class Biblioteca {
         return [...this.livros];
     }
 
-    // Gera o próximo id disponível: maior id existente + 1 (ou 1, se a biblioteca estiver vazia)
+    // Gera o próximo id de livro disponível: maior id existente + 1 
     proximoId(): number {
         if (this.livros.length === 0) return 1;
         return Math.max(...this.livros.map(livro => livro.id)) + 1;
